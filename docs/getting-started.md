@@ -127,7 +127,7 @@ npm start # you can also use: expo start
 
 ### Ингээд боллоо!
 
-Танд баяр хүргэе! Та хамгийн анхны React Native аппаа ажиллуулж, өөрчлөлт хийж үзлээ.
+Танд баяр mhj! Та хамгийн анхны React Native аппаа ажиллуулж, өөрчлөлт хийж үзлээ.
 
 <center><img src="/react-native/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
