@@ -3,11 +3,12 @@ id: style
 title: Style
 ---
 
-With React Native, you don't use a special language or syntax for defining styles. You just style your application using JavaScript. All of the core components accept a prop named `style`. The style names and [values](colors.md) usually match how CSS works on the web, except names are written using camel casing, e.g `backgroundColor` rather than `background-color`.
+React Native-д хэв маягийг тодорхойлоход ямар нэг онцгой хэл, синтакс шаардлагагүй. Ердөө Javascript ашиглан аппликейшныхаа хэв загварыг гаргана. Бүх гол компонент нь `style` нэртэй пропыг зөвшөөрдөг. 
+Хэв маягийн нэр өнгө нь [values](colors.md) веб дээр CSS хэрхэн ажилладагтай адилхан.  Гэхдээ `background-color` гэхийн оронд `backgroundColor` гэх мэт үгийн дунд томоор бичсэн нэрэнд хамаарахгүй.  
 
-The `style` prop can be a plain old JavaScript object. That's the simplest and what we usually use for example code. You can also pass an array of styles - the last style in the array has precedence, so you can use this to inherit styles.
+`style` нэртэй проп нь цулгуй, хуучны Javascript байж болно. Энэ нь хамгийн энгийн бөгөөд бид ихэвчлэн жишиг код болгон ашигладаг. Мөн та хэв маягийн массив ашиглаж болно. Массивийн сүүлийн хэв маяг нь тэргүүнд гарч ирдэг. Өмнө нь ашигласан хэв маягаа дахин ашиглах болон энэ функцийг ашиглах боломжтой. 
 
-As a component grows in complexity, it is often cleaner to use `StyleSheet.create` to define several styles in one place. Here's an example:
+Компонент нь илүү төвөгтэй болж ирдэг учир нэг газар хэд хэдэн хэв маягийг тодорхойлох бол `StyleSheet.create`-ийг ашиглавал илүү цэвэрхэн байдаг. Жишээ нь:  
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -40,9 +41,9 @@ export default class LotsOfStyles extends Component {
 // skip this line if using Create React Native App
 AppRegistry.registerComponent('AwesomeProject', () => LotsOfStyles);
 ```
+Компонентүүээ `style` пропыг хүлээн зөвшөөрдөг болгочихвол эргээд дэд компонентүүдийнхаа хэв маягийг гаргахад ашиглаж болно. Мөн үүнийг CSS доторх шиг "cascade" маягтай болгоход ашиглаж олно.
 
-One common pattern is to make your component accept a `style` prop which in turn is used to style subcomponents. You can use this to make styles "cascade" the way they do in CSS.
+Текстийн хэв маягийг өөрчлөлх олон янзын арга бий. [Text component reference](text.md) гэсэн рүү орж бүрэн жагсаалтыг харна уу.
 
-There are a lot more ways to customize text style. Check out the [Text component reference](text.md) for a complete list.
-
-Now you can make your text beautiful. The next step in becoming a style master is to [learn how to control component size](height-and-width.md).
+Одоо та текстийг хэрхэн гоёмсог болгох тухай мэдсэн тул дараа нь 
+ [Компонентын хэмжийг хэрхэн удирдах](height-and-width.md) тухай мэдээлэлтэй танилцана уу.
