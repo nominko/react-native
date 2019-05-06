@@ -1,11 +1,11 @@
 ---
 id: handling-text-input
-title: Handling Text Input
+Гарчиг: Текст оруулах
 ---
 
-[`TextInput`](textinput.md#content) is a basic component that allows the user to enter text. It has an `onChangeText` prop that takes a function to be called every time the text changed, and an `onSubmitEditing` prop that takes a function to be called when the text is submitted.
+[`Текст оруулах`](textinput.md#content) нь хэрэглэгчийг текст оруулах боломж олгодог үндсэн компонент юм.  Текстэнд өөрчлөлт орох бүрт дуудагддаг ажиллагаатай `onChangeText`  гэх проп, мөн текст оруулахад дуудагддаг `onSubmitEditing` гэх проптой.
 
-For example, let's say that as the user types, you're translating their words into a different language. In this new language, every single word is written the same way: 🍕. So the sentence "Hello there Bob" would be translated as "🍕🍕🍕".
+Жишээ нь, хэрэглэгч үг бичиж байх үед та үгийг нь өөр хэл рүү орчуулж байлаа гэж бодъё. Шинээр орчуулж буй хувилбарт үг бүр нь ижил хэлбэрээр 🍕 бичигдэх болно. Тийм болохоор "Сайн уу, Боб" гэсэн өгүүлбэрийг "🍕🍕🍕" гэж орчуулагдана. 
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
@@ -37,8 +37,10 @@ export default class PizzaTranslator extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => PizzaTranslator);
 ```
 
-In this example, we store `text` in the state, because it changes over time.
+Өөрчлөлт орж байх учир энэ жишээнд`text`-ийг төлөвт  хадгалсан байгаа. 
 
-There are a lot more things you might want to do with a text input. For example, you could validate the text inside while the user types. For more detailed examples, see the [React docs on controlled components](https://reactjs.org/docs/forms.html#controlled-components), or the [reference docs for TextInput](textinput.md).
+Текст оруулахтай холбоотой өөр олон зүйлсийг та хийхийг хүсэж байгаа нь лавтай. Жишээ нь, хэрэглэгч бичиж байх үед та доторх текстийг баталж болно. Илүү дэлгэрэнгүй жишээг 
+[Хяналттай компонентийн тухай React docs-той танилцаарай](https://reactjs.org/docs/forms.html#controlled-components), эсвэл [Текст оруулах тухай тайлбарыг сонирхоорой](textinput.md).
 
-Text input is one of the ways the user interacts with the app. Next, let's look at another type of input and [learn how to handle touches](handling-touches.md).
+Текст оруулах нь хэрэглэгч апптай харилцаж байгаа нэг хэлбэр юм. Өөр нэг хэлбэр болох хэрэглэгч дэлгэцэд хүрэх харилцааг хэрхэн тохируулах тухай
+ [эндээс уншаарай](handling-touches.md).
