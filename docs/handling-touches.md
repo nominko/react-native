@@ -1,13 +1,13 @@
 ---
 id: handling-touches
-title: Handling Touches
+Гарчиг: Дэлгэцэд хүрэхийг зохицуулах
 ---
 
-Users interact with mobile apps mainly through touch. They can use a combination of gestures, such as tapping on a button, scrolling a list, or zooming on a map. React Native provides components to handle all sorts of common gestures, as well as a comprehensive [gesture responder system](gesture-responder-system.md) to allow for more advanced gesture recognition, but the one component you will most likely be interested in is the basic Button.
+Хэрэглэгчид гар утасны апптай харилцахдаа дэлгэцэд хүрдэг. Товчлуур дээр дарах, жагсаалт гүйлгэх, газрын зураг томруулах гэх мэт үйлдлүүд хийдэг.  React Native-т бүх төрлийн үйлдлийг зохицуулдаг компонент байдаг. Мөн[хариу үйлдлийн систем](gesture-responder-system.md) цогц байдаг бөгөөд энэ нь үйлдлийг илүү ахисан түвшинд таних юм. Гэхдээ таны сонирхлыг татах нэг компонент татах нэг гол компонент бол энгийн Товч юм. 
 
-## Displaying a basic button
+## Энгийн товчийг харуулах
 
-[Button](button.md) provides a basic button component that is rendered nicely on all platforms. The minimal example to display a button looks like this:
+[Товч](button.md) нь бүх платформ дээр сайхан харагдах энгийн товчин компонент юм. Элдэв маяггүй товч нэг иймэрхүү харагдана:
 
 ```javascript
 <Button
@@ -18,11 +18,11 @@ Users interact with mobile apps mainly through touch. They can use a combination
 />
 ```
 
-This will render a blue label on iOS, and a blue rounded rectangle with white text on Android. Pressing the button will call the "onPress" function, which in this case displays an alert popup. If you like, you can specify a "color" prop to change the color of your button.
+Энэ товч нь iOS дээр цэнхэр тэмдэг харагдах бол Android дээр цагаан тексттэй дугуй ирмэгтэй цэнхэр тэгш өнцөгт харагдана. Энэ товчийг дарвал "onPress" ажиллах бөгөөд анхааруулга цонх дэлгэц дээр гарч ирнэ. Хэрэв хүсвэл та "өнгийн" пропыг тохируулж товчныхоо өнгийг өөрчилж болно. 
 
 ![](/react-native/docs/assets/Button.png)
 
-Go ahead and play around with the `Button` component using the example below. You can select which platform your app is previewed in by clicking on the toggle in the bottom right, then click on "Tap to Play" to preview the app.
+Доорх жишээг ашиглан `Товч` компонентийг хүссэнээрээ ашиглаад үзээрэй. Баруун доод хэсэгт байрлах солих товч дээр дараад аппаа ямар платформ дээр урьдчилан үзэхээ сонгож болно. Тэгээд "Tap to Play" гэсэн дээр дарж аппаа урьдчилан харна.
 
 ```SnackPlayer name=Button%20Basics
 import React, { Component } from 'react';
@@ -86,21 +86,20 @@ AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
 
 ## Touchables
 
-If the basic button doesn't look right for your app, you can build your own button using any of the "Touchable" components provided by React Native. The "Touchable" components provide the capability to capture tapping gestures, and can display feedback when a gesture is recognized. These components do not provide any default styling, however, so you will need to do a bit of work to get them looking nicely in your app.
+Хэрвээ энгийн товч нь таны апп-д тохирохгүй бол та React Native-ийн "Touchable" компонентийг ашиглан өөрийн гэсэн товчоо бүтээх боломжтой. "Touchable" компонент нь товших үйлдлийг таних чадвартай бөгөөд үйлдлийг таньсан даруйдаа хариу үйлдлийг дэлгэц дээр харуулдаг. Эдгээр компонентэд өгөгдмөл хэв маяг гэж байхгүй. Апп дээрээ гоё харагдуулахын тулд бага зэрэг хөдөлмөрлөх шаардлагатай.
+Аль "Touchable" компонент ашиглах нь ямар төрлийн хариу үйлдэл үзүүлэхийг хүсэж байгаагаас тань хамаарна. 
 
-Which "Touchable" component you use will depend on what kind of feedback you want to provide:
+- Ерөнхийдөө, та [**TouchableHighlight**](touchablehighlight.md)-ыг товч эсвэл вебийн холбоос ашиглахыг хүссэн газартаа ашиглаж болно. Товч дээр дарах үед арын суурь өгнө бараан болно. 
 
-- Generally, you can use [**TouchableHighlight**](touchablehighlight.md) anywhere you would use a button or link on web. The view's background will be darkened when the user presses down on the button.
+- Android дээр хэрэглэгч хүрэх үед бэхний өнгө хөвөрдөг хариу үйлдэл хийдэг болгохыг хүсвэл [**TouchableNativeFeedback**](touchablenativefeedback.md) ашиглаарай. 
 
-- You may consider using [**TouchableNativeFeedback**](touchablenativefeedback.md) on Android to display ink surface reaction ripples that respond to the user's touch.
+- [**TouchableOpacity**](touchableopacity.md)гэдгийг ашиглавал товчны харагдах хүч сулрах бөгөөд хэрэглэгч дэлгэц дээр дарж байх үед арын суурийг нэвт харагддаг болгоно. 
 
-- [**TouchableOpacity**](touchableopacity.md) can be used to provide feedback by reducing the opacity of the button, allowing the background to be seen through while the user is pressing down.
+- Хэрэв та товших үйлдлийг хүлээн авах ч ямар нэг хариу үйлдэл дэлгэц дээр харуулахгүй байхыг хүсвэл [**TouchableWithoutFeedback**](touchablewithoutfeedback.md) ашиглаарай.
 
-- If you need to handle a tap gesture but you don't want any feedback to be displayed, use [**TouchableWithoutFeedback**](touchablewithoutfeedback.md).
+Зарим үед хэрэглэгч нэг зүйл дээр дараад, хэр удаан харж буйг та мэдэхийг хүсэж магад. "Touchable" компонентуудын аль ч `onLongPress` пропсийг ажиллуулан энэхүү удаан дарах явцыг зохицуулж болно.
 
-In some cases, you may want to detect when a user presses and holds a view for a set amount of time. These long presses can be handled by passing a function to the `onLongPress` props of any of the "Touchable" components.
-
-Let's see all of these in action:
+Бодитоор ямар байдгийг харцгаая:
 
 ```SnackPlayer platform=android&name=Touchables
 import React, { Component } from 'react';
@@ -170,10 +169,10 @@ const styles = StyleSheet.create({
   }
 });
 
-// skip this line if using Create React Native App
+// Skip this line if you are using Create React Native App
 AppRegistry.registerComponent('AwesomeProject', () => Touchables);
 ```
 
-## Scrolling lists, swiping pages, and pinch-to-zoom
+## Жагсаалт гүйлгэх, хуудас эргүүлэх, and томруулах
 
-Another gesture commonly used in mobile apps is the swipe or pan. This gesture allows the user to scroll through a list of items, or swipe through pages of content. In order to handle these and other gestures, we'll learn [how to use a ScrollView](using-a-scrollview.md) next.
+Гар утасны апп дээр түгээмэл хийгддэг өөр нэг үйлдэл нь гүйлгэх эсвэл хөндлөн, босоо байрлалд шилжих юм. Ингэснээр хэрэглэгч жагсаасан зүйлсийг гүйлгэн харж, хуудас бүхий контентийг гүйлгэн харах боломжтой. Эдгээр болон бусад үйлдлийн талаар мэдэхийг хүсвэл  [ScrollView хэрхэн ашиглах тухай](using-a-scrollview.md) уншаарай.
