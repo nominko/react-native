@@ -1,15 +1,16 @@
 ---
 id: using-a-listview
-title: Using List Views
+Гарчиг: List Views ашиглах
 ---
 
-React Native provides a suite of components for presenting lists of data. Generally, you'll want to use either [FlatList](flatlist.md) or [SectionList](sectionlist.md).
+React Native-т жагсаалт бүхий өгөгдөлд зориулсан багц компонент байдаг. Ерөнхийдөө та [FlatList](flatlist.md) эсвэл [SectionList](sectionlist.md) ашиглах хэрэгтэй болно. 
 
-The `FlatList` component displays a scrolling list of changing, but similarly structured, data. `FlatList` works well for long lists of data, where the number of items might change over time. Unlike the more generic [`ScrollView`](using-a-scrollview.md), the `FlatList` only renders elements that are currently showing on the screen, not all the elements at once.
+`FlatList` компонент нь өөрчлөлт орох жагсаалтыг гүйлгэдэг компонент юм. Зарим зүйлст өөрчлөлт орох, урт жагсаалт байгаа үед `FlatList` ашиглах нь  тохиромжтой. Илүү ерөнхий [`ScrollView`](using-a-scrollview.md)-ийг бодвол`FlatList` нь бүх элементүүдийг биш одоо дэлгэц дээр харагдаж байгаа зүйлсийг л ажиллуулдаг.
 
-The `FlatList` component requires two props: `data` and `renderItem`. `data` is the source of information for the list. `renderItem` takes one item from the source and returns a formatted component to render.
+`FlatList` компонентэд `data` болон `renderItem` гэсэн хоёр пропс шаардлагатай. `data` нь жагсаалтын мэдээллийн эх сурвалж нь юм. `renderItem` нь уг эх сурвалжаас нэг зүйлийг аваад форматтай компонент дээр ирж ажиллуулдаг. 
 
-This example creates a simple `FlatList` of hardcoded data. Each item in the `data` props is rendered as a `Text` component. The `FlatListBasics` component then renders the `FlatList` and all `Text` components.
+Энэ жишээ дээр тогтсон өгөгдлийн энгийн `FlatList` хэрхэн үүсгэхийг харуулж байна. `data` пропс доторх зүйл бүхэн `Text` компонент шиг ажиллаж байна. 
+
 
 ```SnackPlayer name=FlatList%20Basics
 import React, { Component } from 'react';
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('AwesomeProject', () => FlatListBasics);
 ```
 
-If you want to render a set of data broken into logical sections, maybe with section headers, similar to `UITableView`s on iOS, then a [SectionList](sectionlist.md) is the way to go.
+Хэрэв та iOS дээрх `UITableView` шиг бүлэг өгөгдлийг хэсэгчлэн, магадгүй толгой хэсэгтэй оруулахыг хүсэж байгаа бол [SectionList](sectionlist.md) ашиглаарай. 
+
 
 ```SnackPlayer name=SectionList%20Basics
 import React, { Component } from 'react';
@@ -102,4 +104,5 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('AwesomeProject', () => SectionListBasics);
 ```
 
-One of the most common uses for a list view is displaying data that you fetch from a server. To do that, you will need to [learn about networking in React Native](network.md).
+Жагсаалт харах функцийн түгээмэл ашиглагддаг нэг хэлбэр нь серверээс татсан датагаа харуулах юм. Ингэхийн тулд та 
+[React Native доторх сүлжээний тухай ](network.md) мэддэг байх хэрэгтэй.
